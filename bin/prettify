@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'prettifier'
+pretty = Prettify::Pretty.new
+pretty.prettify
