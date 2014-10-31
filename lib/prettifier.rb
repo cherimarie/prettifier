@@ -8,12 +8,15 @@ module Prettify
     def prettify
       #read passed in file
       puts "not in the file yet"
-      # file = File.open("../test.rb", "r+") 
+      File.open("test.rb", "r+") do |file|
+        while line = file.gets
+          puts line
+        end
       
 
-      IO.foreach("../test.rb", "r+") do |line|
-        puts "in the file"
-        puts line
+      # IO.foreach("../test.rb", "r+") do |line|
+      #   puts "in the file"
+      #   puts line
         # if line.match(/#(.*)$/)
         #   puts line
         #   puts "mrrr?"
