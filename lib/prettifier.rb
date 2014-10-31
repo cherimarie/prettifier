@@ -7,22 +7,15 @@ module Prettify
 
     def prettify
       #read passed in file
-      puts "not in the file yet"
       File.open("test.rb", "r+") do |file|
         while line = file.gets
-          puts line
+          if line.match(/#(.*)$/)
+            line = line.chomp
+            line << ("  >@^.^@<")
+            puts line
+          end
         end
-      
-
-      # IO.foreach("../test.rb", "r+") do |line|
-      #   puts "in the file"
-      #   puts line
-        # if line.match(/#(.*)$/)
-        #   puts line
-        #   puts "mrrr?"
-        # end
       end 
-      # file.close
       #search for ruby comments - line starts with #
 
       #insert ">@^.^@<"
